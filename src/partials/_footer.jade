@@ -1,0 +1,21 @@
+mixin footerColumn(heading, items)
+    .mdl-mega-footer__drop-down-section
+        input.mdl-mega-footer__heading-checkbox(type='checkbox', checked='')
+        h1.mdl-mega-footer__heading #{heading}
+        ul.mdl-mega-footer__link-list
+            for item in items
+                li: a(href='#') #{item}
+
+footer.mdl-mega-footer
+    .mdl-mega-footer__middle-section
+        +footerColumn('Features',   [ 'About',        'Terms',    'Partners',  'Updates'               ])
+        +footerColumn('Details',    [ 'Specs',        'Tools',    'Resources'                          ])
+        +footerColumn('Technology', [ 'How it works', 'Patterns', 'Usage',     'Products', 'Contracts' ])
+        +footerColumn('FAQ',        [ 'Questions',    'Answers',  'Contact us'                         ])
+
+    .mdl-mega-footer__bottom-section
+        .mdl-logo Title
+        ul.mdl-mega-footer__link-list
+            li: a(href='#') Help
+            li: a(href='#') Privacy &amp; Terms
+

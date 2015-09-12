@@ -1,0 +1,17 @@
+extends _layout_general
+
+block contenido
+    p esto es un contenido
+    != yield
+
+block footer
+    br
+    != partial("/_footer")
+
+block header
+    ul
+        for contenido in public._data.indice
+            li
+                a(href="#{contenido.url}") #{contenido.titulo}
+
+
