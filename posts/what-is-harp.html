@@ -1,0 +1,106 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="description" content=""><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="/index.css"><script src="/vendors/bower_components/material-design-lite/material.min.js"></script><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"><title>Project Name</title></head><body><div class="demo-layout-waterfall mdl-layout mdl-js-layout"><header class="mdl-layout__header mdl-layout__header--waterfall"><div class="mdl-layout__header-row"><span class="mdl-layout-title">Title</span><div class="mdl-layout-spacer"></div><div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right"><label for="waterfall-exp" class="mdl-button mdl-js-button mdl-button--icon"><i class="material-icons">search</i></label><div class="mdl-textfield__expandable-holder"><input id="waterfall-exp" type="text" name="sample" class="mdl-textfield__input"></div></div></div><div class="mdl-layout__header-row"><div class="mdl-layout-spacer"></div><nav class="mdl-navigation"></nav><a href="" class="mdl-navigation__link">Link<a href="" class="mdl-navigation__link">Link</a><a href="" class="mdl-navigation__link">Link</a><a href="" class="mdl-navigation__link">Link</a></a><nav class="mdl-navigation"><a href="" class="mdl-navigation__link">Link</a><a href="" class="mdl-navigation__link">Link</a><a href="" class="mdl-navigation__link">Link</a></nav></div></header><div class="mdl-layout__drawer"><nav class="mdl-navigation"><a href="" class="mdl-navigation__link">Link</a><a href="" class="mdl-navigation__link">Link</a><a href="" class="mdl-navigation__link">Link</a><a href="" class="mdl-navigation__link">Link</a></nav></div><main class="mdl-layout__content"><div class="page-content"><h1>Harp</h1><blockquote>
+<p>zero-configuration web server with built in pre-processing</p>
+</blockquote>
+<h3>What is Harp?</h3><p>Harp is a static web server that also serves Jade, Markdown, EJS, Less, Stylus, Sass, and CoffeeScript <strong>as</strong> HTML, CSS, and JavaScript without any configuration. It supports the beloved layout/partial paradigm and it has flexible metadata and global objects for traversing the file system and injecting custom data into templates. Optionally, Harp can also compile your project down to static assets for hosting behind any valid HTTP server.</p>
+<h3>Why?</h3><p>Pre-compilers are becoming extremely powerful and shipping front-ends as static assets has many upsides. It&#39;s simple, it&#39;s easy to maintain, it&#39;s low risk, easy to scale, and requires low cognitive overhead. I wanted a lightweight web server that was powerful enough for me to abandon web frameworks for dead simple front-end publishing.</p>
+<h3>Features</h3><ul>
+<li>easy installation, easy to use</li>
+<li>fast and lightweight</li>
+<li>robust (clean urls, intelligent path redirects)</li>
+<li>built in pre-processing</li>
+<li>first-class layout and partial support</li>
+<li>built in LRU caching in production mode</li>
+<li>can export assets to HTML/CSS/JS</li>
+<li>does not require a build steps or grunt task</li>
+<li>fun to use</li>
+</ul>
+<h3>Supported Pre-Processors</h3><table>
+<thead>
+<tr>
+<th></th>
+<th>Language Superset</th>
+<th>Whitespace Sensitive</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>HTML</strong></td>
+<td><a href="http://embeddedjs.com/">EJS</a></td>
+<td><a href="http://jade-lang.com/">Jade</a>, <a href="http://daringfireball.net/projects/markdown/">Markdown</a></td>
+</tr>
+<tr>
+<td><strong>CSS</strong></td>
+<td><a href="http://lesscss.org/">LESS</a>, <a href="http://sass-lang.com/">Sass (SCSS)</a></td>
+<td><a href="http://learnboost.github.io/stylus/">Stylus</a>, <a href="http://sass-lang.com/">Sass</a></td>
+</tr>
+<tr>
+<td><strong>JavaScript</strong></td>
+<td>(TBD)</td>
+<td><a href="http://coffeescript.org/">CoffeeScript</a></td>
+</tr>
+</tbody>
+</table>
+<h3>Resources</h3><ul>
+<li><strong>Server Documentation</strong> - <a href="http://harpjs.com/docs/">harpjs.com/docs/</a></li>
+<li><strong>Platform Documentation</strong> - <a href="https://harp.io/docs">harp.io/docs</a></li>
+<li><strong>Source Code</strong> - <a href="https://github.com/sintaxi/harp">github.com/sintaxi/harp</a></li>
+</ul>
+<p>Authored and maintained by <a href="http://twitter.com/sintaxi">@sintaxi</a>. Made for the <a href="http://twitter.com/HarpPlatform">@HarpPlatform</a>.</p>
+<hr>
+<h3>Installation</h3><pre><code>sudo npm install -g harp
+</code></pre><h3>Quick Start</h3><p>Creating a new harp application is a breeze...</p>
+<pre><code>harp init myproj
+harp server myproj
+</code></pre><p>Your Harp application is now running at <a href="">http://localhost:9000</a></p>
+<hr>
+<h2>Documentation</h2><p>Harp can be used as a library or as a command line utility.</p>
+<h3>CLI Usage</h3><pre><code>Usage: harp [command] [options]
+
+Commands:
+
+  init [path]                 initalize new harp application (defaults to current directory)
+  server [path] [options]     start harp server
+  compile [path] [options]    compile project to static assets
+  multihost [path] [options]  start harp server to host directory of harp apps
+
+Options:
+
+  -h, --help     output usage information
+  -V, --version  output the version number
+</code></pre><p>Start the server in root of your application by running...</p>
+<pre><code>harp server
+</code></pre><p>You may optionally supply a port to listen on...</p>
+<pre><code>harp server --port 8002
+</code></pre><p>Compile an application from the root of your application by running...</p>
+<pre><code>harp compile
+</code></pre><p>You may optionally pass in a path to where you want the compiled assets to go...</p>
+<pre><code>harp compile --output /path/to/cordova/project/www
+</code></pre><h3>Lib Usage</h3><p>You may also use harp as a node library for compiling or running as a server.</p>
+<p>Serve up a harp application...</p>
+<pre><code class="language-js">var harp = require(&quot;harp&quot;)
+harp.server(projectPath [,args] [,callback])
+</code></pre>
+<p><strong>Or</strong> compile harp application</p>
+<pre><code class="language-js">var harp = require(&quot;harp&quot;)
+harp.compile(projectPath [,outputPath] [, callback])
+</code></pre>
+<p><strong>Or</strong> use as Connect/ExpressJS middleware</p>
+<pre><code class="language-js">var express = require(&quot;express&quot;);
+var harp = require(&quot;harp&quot;);
+var app = express();
+</code></pre>
+<pre><code class="language-js">// Express 3
+app.configure(function(){ 
+  app.use(express.static(__dirname + &quot;/public&quot;));
+  app.use(harp.mount(__dirname + &quot;/public&quot;));
+});
+</code></pre>
+<pre><code class="language-js">// Express 4
+
+app.use(express.static(__dirname + &quot;/public&quot;));
+app.use(harp.mount(__dirname + &quot;/public&quot;));
+</code></pre>
+<h2>License</h2><p>Copyright © 2012–2014 <a href="http://chloi.io">Chloi Inc</a>. All rights reserved.</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p><footer class="mdl-mega-footer"><div class="mdl-mega-footer__middle-section"><div class="mdl-mega-footer__drop-down-section"><input type="checkbox" checked="" class="mdl-mega-footer__heading-checkbox"/><h1 class="mdl-mega-footer__heading">Features</h1><ul class="mdl-mega-footer__link-list"><li><a href="#">About</a></li><li><a href="#">Terms</a></li><li><a href="#">Partners</a></li><li><a href="#">Updates</a></li></ul></div><div class="mdl-mega-footer__drop-down-section"><input type="checkbox" checked="" class="mdl-mega-footer__heading-checkbox"/><h1 class="mdl-mega-footer__heading">Details</h1><ul class="mdl-mega-footer__link-list"><li><a href="#">Specs</a></li><li><a href="#">Tools</a></li><li><a href="#">Resources</a></li></ul></div><div class="mdl-mega-footer__drop-down-section"><input type="checkbox" checked="" class="mdl-mega-footer__heading-checkbox"/><h1 class="mdl-mega-footer__heading">Technology</h1><ul class="mdl-mega-footer__link-list"><li><a href="#">How it works</a></li><li><a href="#">Patterns</a></li><li><a href="#">Usage</a></li><li><a href="#">Products</a></li><li><a href="#">Contracts</a></li></ul></div><div class="mdl-mega-footer__drop-down-section"><input type="checkbox" checked="" class="mdl-mega-footer__heading-checkbox"/><h1 class="mdl-mega-footer__heading">FAQ</h1><ul class="mdl-mega-footer__link-list"><li><a href="#">Questions</a></li><li><a href="#">Answers</a></li><li><a href="#">Contact us</a></li></ul></div></div><div class="mdl-mega-footer__bottom-section"><div class="mdl-logo">Title</div><ul class="mdl-mega-footer__link-list"><li><a href="#">Help</a></li><li><a href="#">Privacy &amp; Terms</a></li></ul></div></footer></div></main></div></body></html>

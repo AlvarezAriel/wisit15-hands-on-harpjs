@@ -1,1 +1,0 @@
-var warn;warn=function(n){return console.warn(n)};warn("test warning tho");
