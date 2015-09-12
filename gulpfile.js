@@ -1,8 +1,8 @@
 var gulp = require('gulp');
 var ghPages = require('gulp-gh-pages');
-var shell = require('gulp-shell')
+var shell = require('gulp-shell');
 
-gulp.task('gh-pages-push', function () {
+gulp.task('gh-pages-push', ['build'], function () {
     return gulp.src('./dist/**/*').pipe(ghPages());
 });
 
